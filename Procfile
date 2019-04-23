@@ -1,1 +1,1 @@
-web: gunicorn AZPhoto.wsgi --log-file -
+web: gunicorn AZPhoto.wsgi
