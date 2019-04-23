@@ -125,7 +125,9 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
 
 STATICFILES_FINDERS=[
     'django.contrib.staticfiles.finders.FileSystemFinder',
