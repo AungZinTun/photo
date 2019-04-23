@@ -3,7 +3,8 @@
 {% block content %}
 	<!-- Page top section start -->
    <!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="img/headers-bg/4.jpg">
+   {% load static %}
+	<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/4.jpg" %}">
 		<div class="breadcrumb-area">
 			<a href="{% url 'price'%}">Home</a> / <span>Prices</span>
 		</div>
