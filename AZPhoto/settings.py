@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'price',
+    'portfolio', 
+    'contact',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'AZPhoto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,17 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "AZPhoto/static"),
-    '/var/www/static/',
-]
+STATICFILES_DIRS = []
 
 # Configure Django App for Heroku.
 
 
 
-STATICFILES_FINDERS=[
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+
 django_heroku.settings(locals())
