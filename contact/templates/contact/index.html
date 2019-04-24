@@ -3,16 +3,61 @@
 {% block content %}
 	<!-- Page top section start -->
    <!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="img/headers-bg/4.jpg">
-		<div class="breadcrumb-area">
-            <a href="{% url 'price'%}">Home</a> / 
-     Contact Us
-        </div>
-	</div>
+   <!-- Page top section start -->
+   {% load static %}
+<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/4.jpg" %}">
+   <div class="breadcrumb-area">
+      <a href="#">Home</a> / <span>Contact</span>
+   </div>
+</div>
+<!-- Page top section end -->
+
+<div class="map-area" id="map-canvas"></div>
+
+
+   <!-- Contact section start -->
+<section class="contact-section set-bg spad" data-setbg="{% static "img/contact-bg.jpg" %}">
+   <div class="container-fluid contact-warp">
+      <div class="contact-text">
+         <div class="container p-0">
+            <span class="sp-sub-title">AZ Photography</span>
+            <h3 class="sp-title"> Money Back Guarenteed</h3>
+            <!-- <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habi tasse platea dictumst. Curabitur rhoncus auctor eleifend.</p> -->
+
+            <ul class="con-info">
+               <li><i class="flaticon-phone-call"></i>09798494364 , 09268993797, 09693646731</li>
+               <li><i class="flaticon-envelope"></i>contact.azphotography@gmail.com</li>
+               <li><i class="flaticon-placeholder"></i>Shwe Taung Kyar Resident, Shan Queen<br> Taunggyi, Myanmar </li>
+            </ul>
+         </div>
+      </div>
+      <div class="container p-0">
+         <div class="row">
+            <div class="col-xl-8 offset-xl-4">
+               <form class="contact-form">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <input type="text" placeholder="Your name">
+                     </div>
+                     <div class="col-md-6">
+                        <input type="email" placeholder="E-mail">
+                     </div>
+                     <div class="col-md-12">
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Message"></textarea>
+                        <button class="site-btn light">Send</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Contact section end -->
 	
 
 	<!-- Elements section end -->
-
 
     {% endblock  %}
 
