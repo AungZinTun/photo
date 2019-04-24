@@ -12,8 +12,8 @@
 	<!-- Page top section end -->
 			<style > 	
 						.pricing {
-						background: #007baf;
-						background: linear-gradient(to right, #0062E6, #33AEFF);
+						background: #7e9aa7;
+						background: linear-gradient(to right, rgb(177, 177, 177), rgb(228, 228, 228));
 						}
 
 						.pricing .card {
@@ -93,7 +93,10 @@
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.photo }} Photo</li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.print_small }} ({{ s.print_small_size }} Print) </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.photo }} Full-sized softcopy</li>
+			  {% if s.print_large %}
+			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.print_large }} ({{ s.print_large_size }} Print) </li>
+			  {% endif %}
+			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.photo }} Full-sized softcopy</li>
 			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.shooting_time }} Hours shooting time</li>
 			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.shooting_location }} Location</li>
 	
