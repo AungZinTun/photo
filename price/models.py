@@ -3,22 +3,22 @@ from django.db import models
 # Create your models here.
 class Session(models.Model):
     name=models.CharField(max_length=30)
-    price_old=models.IntegerField()
+    price_old=models.IntegerField(blank=True)
     price=models.IntegerField()
     photo=models.IntegerField()
 
     print_small_size=models.CharField(max_length=30)
     print_small=models.IntegerField()
 
-    print_large_size=models.CharField(max_length=30)
-    print_large=models.IntegerField()
+    print_large_size=models.CharField(max_length=30, blank=True)
+    print_large=models.IntegerField(blank=True)
 
-    print_a=models.IntegerField()
+    print_a=models.IntegerField(blank=True)
 
-    shooting_time=models.IntegerField()
-    shooting_location=models.IntegerField()
+    shooting_time=models.IntegerField('Shooting (Hour)')
+    shooting_location=models.IntegerField('Number of Location')
 
     remark=models.CharField(max_length=100)
 
-    def __str__()
-        return self.name
+    def __str__(self):
+        return (self.name)

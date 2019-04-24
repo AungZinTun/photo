@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Session
 
 # Create your views here.
 def index(request):
-    return render (request, 'price/index.html')
+    session=Session.objects.all()
+    return render (request, 'price/index.html', {'session':session})

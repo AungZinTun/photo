@@ -76,33 +76,37 @@
 	<section class="pricing py-5">
   <div class="container">
     <div class="row">
-      <!-- Free Tier -->
+
+	  <!-- Free Tier -->
+	  {% for s in session %}
+	
+	 
       <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">Mini Session</h5>
-            <h6 class="card-price text-center">50,000<span class="period">MMK</span></h6>
+			<h5 class="card-title text-muted text-uppercase text-center">	{{ s }}</h5>
+			{% if s.price_old %}
+			<h6 class="text-danger text-uppercase text-center"> <s> {{ s.price_old }}  </s> </h6>
+			{% endif %}
+            <h6 class="card-price text-center"> {{ s.price }}<span class="period">MMK</span></h6>
             <hr>
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>10 Photo</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>10 (4"x6" Print) </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Full-size softcopy</li>
-			  <li><span class="fa-li"><i class="fas fa-check"></i></span>1 Hours shooting time</li>
-			  <li><span class="fa-li"><i class="fas fa-check"></i></span>1 Location</li>
-			  <li><span class="fa-li"><i class="fas fa-check"></i></span> - </li>
-			  <li><span class="fa-li"><i class="fas fa-check"></i></span> - </li>
-			 
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.photo }} Photo</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.print_small }} ({{ s.print_small_size }} Print) </li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.photo }} Full-sized softcopy</li>
+			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.shooting_time }} Hours shooting time</li>
+			  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ s.shooting_location }} Location</li>
+	
 
-              <li class="text-muted text-center"><span class="fa-li"><i class="fas fa-times"></i></span>Best for Solo/Convocation Portrait</li>
-
-         
-            </ul>
+              <li class="text-muted text-center"><span class="fa-li"><i class="fas fa-times"></i></span>{{ s.remark }}</li>            </ul>
             <a href="#" class="btn btn-block btn-primary text-uppercase">Book Now</a>
           </div>
         </div>
-      </div>
+	  </div>
+	  
+	  {%  endfor %}
       <!-- Plus Tier -->
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
 		  <h5 class="card-title text-muted text-uppercase text-center">Basic Session</h5>
@@ -123,9 +127,9 @@
             <a href="#" class="btn btn-block btn-primary text-uppercase">Book Now</a>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Pro Tier -->
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <div class="card">
           <div class="card-body">
 		  <h5 class="card-title text-muted text-uppercase text-center">Extended Session</h5>
@@ -145,7 +149,7 @@
             <a href="#" class="btn btn-block btn-primary text-uppercase">Book Now</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
