@@ -22,3 +22,10 @@ class Session(models.Model):
 
     def __str__(self):
         return (self.name)
+class Book(models.Model):
+    name=models.CharField(max_length=30)
+    phone=models.CharField(max_length=11)
+    date=models.DateField()
+    session=models.ForeignKey(Session, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
