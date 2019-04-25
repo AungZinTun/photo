@@ -87,6 +87,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
+	{% block script %}
+	{% endblock %}
 	<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
 	<script src="{% static "js/bootstrap.min.js" %}"></script>
 	<script src="{% static "js/owl.carousel.min.js" %}"></script>
@@ -97,6 +99,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<!-- load for map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
 	<script src="{% static 'js/map.js' %}"></script>
+
 
 </body>
 </html>

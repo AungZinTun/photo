@@ -91,12 +91,14 @@
 							<form class="contact-form" method="POST">
 									{% csrf_token %}
 									<div class="row">
-									
+										
 										<div class="col-md-6">
-												{{ form.as_p }}
+											{{ form.as_p }}
+										
 										</div>
+										
 										<div class="col-md-12">
-												<button class="site-btn light justify-content-center">Book Now</button>
+												<button class="site-btn light">Book Now</button>
 
 										</div>
 										
@@ -106,11 +108,23 @@
         </div>
 	  </div>
 	  
+	  
+	 
 	 
      
 	</section>
 	<!-- Elements section end -->
 
 
-    {% endblock  %}
+	{% endblock  %}
+	{% block script %}
+
+	<script>
+		$(function () {
+		  $("#datetimepicker1").datetimepicker({
+			format: 'DD/MM/YYYY HH:mm',
+		  });
+		});
+	  </script>
+	{% endblock %}
 

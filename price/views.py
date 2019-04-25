@@ -13,7 +13,7 @@ def book(request):
         if form.is_valid():
             try:
                 form.save()
-                return redirect('/')
+                return redirect('')
             except:
                 pass
         
