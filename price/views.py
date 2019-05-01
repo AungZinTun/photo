@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
+from django.contrib import messages
 from .models import Session
 from .forms import BookForm
 
@@ -11,9 +12,10 @@ def book(request):
     if  request.method=="POST":
         form=BookForm(request.POST)
         if form.is_valid():
+            messages.success(request, 'Booking successful, Thank you')
             try:
                 form.save()
-                return redirect('')
+                return redirect('/')
             except:
                 pass
         
