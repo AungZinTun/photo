@@ -16,11 +16,11 @@ class Photo(models.Model):
     mood=models.CharField(max_length=1, choices=(('u' , 'Under'), ('n', 'normal'), ('o' , 'over')) )
     fov=models.CharField(max_length=1, choices=(('s' , 'Wide'), ('n', 'normal'), ('t' , 'tele')) )
     def __str__(self):
-        return mark_safe('<img src="/%s" height="200" />' % (self.photo))
+        return mark_safe('<img src="/%s" width="200" height="200"/>' % (self.photo))
     def image_tag(self):
         return mark_safe('<img src="/%s" width="200" />' % (self.photo))
-        image_tag.short_description = 'Photo'
-        image_tag.allow_tags = True
+      
+      
         
       
 

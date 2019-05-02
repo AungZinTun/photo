@@ -13,6 +13,6 @@ class ImageAdmin(admin.ModelAdmin):
     # fields = ( 'image_tag','album', 'lighting', 'situation', 'mood', 'fov' )
     readonly_fields = ('image_tag',)
 
-admin.site.register(Photo, ImageAdmin)
+# admin.site.register(Photo, ImageAdmin)
 admin.site.register(Album, AlbumAdmin)
 
