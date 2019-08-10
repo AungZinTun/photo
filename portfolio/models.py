@@ -3,8 +3,10 @@ from django.utils.safestring import mark_safe
 
 # Create your models he
 class Album (models.Model):
+    cat=[('P', 'Portrait'), ('G', 'Graduation'), ('W', 'Prewedding'), ('F', 'Family'), ('B', 'Baby'), ('C', 'Ceremony'), ('D', 'Product')]
     name=models.CharField(max_length=30)
     description=models.CharField(max_length=100)
+    category=models.CharField(max_length=1, choices=cat, default='Portrait')
     def __str__(self):
         return self.name
 
