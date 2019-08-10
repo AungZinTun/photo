@@ -10,10 +10,10 @@ class Session(models.Model):
     print_small_size=models.CharField(max_length=30)
     print_small=models.IntegerField()
 
-    print_large_size=models.CharField(max_length=30, blank=True)
-    print_large=models.IntegerField(blank=True)
+    print_large_size=models.CharField(max_length=30, blank=True, null=True)
+    print_large=models.IntegerField(blank=True, null=True)
 
-    print_a=models.IntegerField(blank=True)
+    print_album=models.IntegerField(blank=True, null=True)
 
     shooting_time=models.IntegerField('Shooting (Hour)')
     shooting_location=models.IntegerField('Number of Location')
