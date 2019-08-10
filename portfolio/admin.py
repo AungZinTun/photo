@@ -15,4 +15,5 @@ class ImageAdmin(admin.ModelAdmin):
 
 # admin.site.register(Photo, ImageAdmin)
 admin.site.register(Album, AlbumAdmin)
+admin.site.register(Photo)
 
