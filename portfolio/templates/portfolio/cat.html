@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Page top section start -->
+   <!-- Page top section start -->
+   <!-- Page top section start -->
+   {% load static %}
+	<div class="page-top-area set-bg" data-setbg=" {% static "img/headers-bg/3.jpg" %}">
+		<div class="breadcrumb-area">
+			<a href="#">Home</a> / <span>Portfolio</span>
+		</div>
+	</div>
+	<!-- Page top section end -->
+
+
+	<!-- Portfolio section start -->
+	<section class="portfolio-section">
+		<div class="sp-pad">
+			<!-- portfolio filter menu -->
+			<ul class="portfolio-filter controls">
+					<form action='/portfolio'>
+							<div class="form-group">
+							  <input type="text" class="form-control" name="cat">
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+			</ul>
+		</div>
+		<div class="portfolio-warp">
+			<!-- single item -->
+			{% for p in photo %}
+		
+			<div class="single-portfolio set-bg" data-setbg="/{{ p.photo }} ">
+				<a href="/{{ p.photo }}" class="portfolio-info" 
+										data-lightbox="example-set"
+										data-title="{{p.album}} "> <img class="example-image">
+					<div class="pfbg set-bg" data-setbg="/{{ p.photo }} "></div>
+				</a>
+			</div>
+			
+			{% endfor %}
+			
+		</div>
+		<div class="clearfix"> </div>
+		<div class="row">
+			<div class="col-md-12 justify-content-center">
+					
+					{% if photo.has_other_pages %}
+			<div class="pagination">
+						<!-- previ -->
+						{% if photo.has_previous %}
+							<li class="page-idem">
+								<a href="?page={{listing.previous_page_number}}" class="page-link" > 
+									<i class="fa fa-angle-left"></i>
+									<i class="fa fa-angle-left"></i>
+									<i class="fa fa-angle-left"></i>
+								</a>
+							</li>
+							{% else %}
+							<li class="page-item disabled ">
+								<a href="" class="page-link"  > 
+										<i class="fa fa-angle-left"></i>
+										<i class="fa fa-angle-left"></i>
+										<i class="fa fa-angle-left"></i>
+								</a>
+							</li>
+						{% endif %}
+						<!-- previ -->
+
+						<!-- numbers -->
+						{% for i in photo.paginator.page_range %}
+							{% if photo.number == i %}
+								<li class="page-item active">
+									<a href="" class="page-link"> {{i}} </a>
+								</li>
+
+							{% else %}
+								<li class="page-item"> 
+									<a href="?page={{i}}" class="page-link">{{i}}</a>
+								</li>
+							{% endif %}
+						{%  endfor%}
+						<!-- numbers -->
+
+						<!-- next -->
+						{% if photo.has_next %}
+						<li class="page-item">
+							<a href="?page={{photo.next_page_number}}" class="page-link"  > 
+								<i class="fa fa-angle-right"></i>
+								<i class="fa fa-angle-right"></i>
+								<i class="fa fa-angle-right"></i>
+							</a>
+						</li>
+						{% else %}
+						<li class="page-item disabled ">
+							<a href="" class="page-link"  > 
+									<i class="fa fa-angle-right"></i>
+									<i class="fa fa-angle-right"></i>
+									<i class="fa fa-angle-right"></i>
+							</a>
+						</li>
+						{% endif %}
+						<!-- next -->
+			</div>
+			{% endif %}
+
+			</div>
+
+		</div>
+		
+	</section>
+	<!-- Portfolio section end -->
+	
+
+	<!-- Elements section end -->
+
+
+    {% endblock  %}
+
