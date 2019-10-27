@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!$!y_vp(-9%cdrwkzjyoa(97r*=%&hdof7ud^n2ez0$+g1z29z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -79,13 +79,8 @@ WSGI_APPLICATION = 'AZPhoto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        "HOST": 'ec2-174-129-226-234.compute-1.amazonaws.com',
-        'NAME': 'dffu55dvsooir7',
-        'USER': 'bizptfcqhudsvt',
-        'PORT': 5432,
-        'PASSWORD': '1264d69233a9df9c391763c2286764b872b8c4117b08894e2c64fb2b503de767',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
